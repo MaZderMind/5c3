@@ -27,3 +27,11 @@ POST `/events` Parameter `url` import/update Pentabarf-XML from URL (requires au
 
 3. Run the backend
  - `supervisor app.js`
+
+
+## Import data
+The node.js-App takes Pentabarf-XML and feeds it into the mongodb-Database.
+```
+curl http://asd:asd@localhost:1234/events --data "url=http://.../2014/programm/schedule.de.xml"
+```
+Pro-Tip: you should change the password from the default 'asd' in your production environment. The username doesn't matter.
