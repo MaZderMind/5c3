@@ -78,9 +78,9 @@ app.post('/events',adminAuth, function(req, res) {
                 
                 events = [];
                 
-                for (i=0;i<eventJson.schedule.day.length;i++) {
-                    for (j=0;j<eventJson.schedule.day[i].room.length;j++) {
-                        for (e=0;e<eventJson.schedule.day[i].room[j].event.length;e++) {
+                if(eventJson.schedule.day) for (i=0;i<eventJson.schedule.day.length;i++) {
+                    if(eventJson.schedule.day[i].room) for (j=0;j<eventJson.schedule.day[i].room.length;j++) {
+                        if(eventJson.schedule.day[i].room[j].event) for (e=0;e<eventJson.schedule.day[i].room[j].event.length;e++) {
                         
                             obj = {};
                             obj._id = eventJson.schedule.day[i].room[j].event[e].$.id;
